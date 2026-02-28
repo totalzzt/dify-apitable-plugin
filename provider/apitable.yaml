@@ -52,3 +52,6 @@ credentials_for_provider:
           en_US: "No"
           zh_Hans: "否"
     default: "no"
+
+tools:
+  - tools/apitable_api.yaml

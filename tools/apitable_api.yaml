@@ -1,0 +1,85 @@
+identity:
+  name: apitable_api
+  author: dify
+  label:
+    en_US: APITable API
+    zh_Hans: APITable API
+  description:
+    en_US: Perform various operations on APITable datasheets and records.
+    zh_Hans: 对 APITable 里的数据表和记录执行各种操作。
+  icon: icon.svg
+
+parameters:
+  - name: action
+    type: select
+    required: true
+    label:
+      en_US: Action
+      zh_Hans: 操作
+    options:
+      - value: list_records
+        label:
+          en_US: List Records
+          zh_Hans: 获取记录
+      - value: create_records
+        label:
+          en_US: Create Records
+          zh_Hans: 创建记录
+      - value: update_records
+        label:
+          en_US: Update Records
+          zh_Hans: 更新记录
+      - value: delete_records
+        label:
+          en_US: Delete Records
+          zh_Hans: 删除记录
+      - value: custom_api_call
+        label:
+          en_US: Custom API Call
+          zh_Hans: 自定义 API 调用
+  - name: datasheet_id
+    type: string
+    required: false
+    label:
+      en_US: Datasheet ID
+      zh_Hans: 数据表 ID (datasheet_id)
+    help:
+      en_US: The ID of the datasheet (e.g., dstXXXXXXXXXXXXXXXX). Required for record operations.
+      zh_Hans: 数据表的 ID (例如 dstXXXXXXXXXXXXXXXX)。用于记录操作时必填。
+  - name: payload
+    type: string
+    required: false
+    label:
+      en_US: Payload / Query Parameters (JSON)
+      zh_Hans: 载荷 / 查询参数 (JSON 格式)
+    help:
+      en_US: JSON formatted string. For list_records, use for query params (e.g., {"viewId": "viw..."}). For mutations, use for request body (e.g., {"records": [...]}).
+      zh_Hans: JSON 格式字符串。获取记录时作为查询参数 (例如 {"viewId": "viw..."})，增删改时作为请求体 (例如 {"records": [...]})。
+  - name: custom_method
+    type: select
+    required: false
+    label:
+      en_US: Custom Method
+      zh_Hans: 自定义 Method
+    options:
+      - value: GET
+        label:
+          en_US: GET
+      - value: POST
+        label:
+          en_US: POST
+      - value: PATCH
+        label:
+          en_US: PATCH
+      - value: DELETE
+        label:
+          en_US: DELETE
+  - name: custom_endpoint
+    type: string
+    required: false
+    label:
+      en_US: Custom Endpoint
+      zh_Hans: 自定义 Endpoint
+    help:
+      en_US: The endpoint path after the base URL (e.g., /spaces/{spaceId}/nodes).
+      zh_Hans: 基地址之后的端点路径 (例如 /spaces/{spaceId}/nodes)。

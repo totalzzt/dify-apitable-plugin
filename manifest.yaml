@@ -1,0 +1,8 @@
+version: 0.0.1
+type: tool
+author: dify
+name: apitable
+description:
+  en_US: APITable integrations for Dify.
+  zh_Hans: Dify 的 APITable 插件。
+icon: icon.svg

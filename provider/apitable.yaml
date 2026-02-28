@@ -1,0 +1,54 @@
+identity:
+  name: apitable
+  author: dify
+  label:
+    en_US: APITable
+    zh_Hans: APITable
+    pt_BR: APITable
+  description:
+    en_US: Interact with your APITable workspace.
+    zh_Hans: 与你的 APITable 工作区交互。
+    pt_BR: Interaja com seu espaço de trabalho do APITable.
+  icon: icon.svg
+
+credentials_for_provider:
+  api_token:
+    type: secret-input
+    required: true
+    label:
+      en_US: API Token
+      zh_Hans: API Token
+      pt_BR: API Token
+    help:
+      en_US: Your APITable API Token.
+      zh_Hans: 你的 APITable API Token。
+  api_base_url:
+    type: text-input
+    required: false
+    label:
+      en_US: API Base URL
+      zh_Hans: API 基地址
+      pt_BR: URL base da API
+    help:
+      en_US: Optional. Base URL for your APITable instance (e.g., https://apitable.local/fusion/v1).
+      zh_Hans: 可选的。你的 APITable 实例基地址 (例如 https://apitable.local/fusion/v1)。
+    default: https://api.apitable.com/fusion/v1
+  read_only:
+    type: select
+    required: true
+    label:
+      en_US: Read Only Mode
+      zh_Hans: 只读模式
+    help:
+      en_US: Set to Yes to prevent write operations.
+      zh_Hans: 设置为 Yes 以禁止写入操作。
+    options:
+      - value: "yes"
+        label:
+          en_US: "Yes"
+          zh_Hans: "是"
+      - value: "no"
+        label:
+          en_US: "No"
+          zh_Hans: "否"
+    default: "no"
